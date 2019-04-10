@@ -1,4 +1,4 @@
-# LabTwo#include <iostream>
+#include <iostream>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -57,22 +57,17 @@ int main()
 
 
     for(int i = 1;i<n;i++){
-            for(int b=i;b<n;b++){
-        for(int j=0;j<50;j++){
-        if(STUDENT[b].name[j]>STUDENT[b-1].name[j]){
-            tmp = STUDENT[i];
-            STUDENT[i] = STUDENT[i-1];
-            STUDENT[i-1] = tmp;
-            printf("%c %c %d \n",STUDENT[i].name[j],STUDENT[i-1].name[j],i);
-            break;
-        }else if(STUDENT[i].name[j]==STUDENT[i-1].name[j]) {continue;}
-        else{
-            break;
-        }
+        for(int j=i;j>0;j--){
+        if(strcmp(STUDENT[j-1].name,STUDENT[j].name)>0){
+            tmp = STUDENT[j];
+            STUDENT[j] = STUDENT[j-1];
+            STUDENT[j-1] = tmp;
+
+            }
 
 
     }
-            }
+
     }
 
      for(int i = 0;i<n;i++){
